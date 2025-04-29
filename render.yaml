@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: superset
+    env: docker
+    plan: free
+    dockerfilePath: ./render.Dockerfile  # path to your custom Dockerfile
+    autoDeploy: true
+    region: oregon  # You can change this to another Render region if needed
+    envVars:
+      - key: SUPERSET_SECRET_KEY
+        value: your-very-secret-key  # Replace with your actual secret key
